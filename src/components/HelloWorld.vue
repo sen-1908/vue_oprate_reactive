@@ -3,8 +3,7 @@ import axios from 'axios'
 import { onBeforeMount, reactive } from 'vue';
 
 let items = reactive({});
-
-let testArray =reactive([]);
+const testArray =reactive({  });
 let testObject =reactive({});
 
 
@@ -39,12 +38,12 @@ onBeforeMount (() => {
       {{ item }}
       
     </li>
-    <li v-for="item in testArray" :key="item.id">
+    <li v-for="item in testArray.values" :key="item.id">
       {{ item }}
       
     </li>
-    <li v-for="item in items" :key="item.id">
-      {{ item }}
+    <li v-for="item in items.values" :key="item.id">
+      {{ item.itemName }}
       
     </li>
   </div>
