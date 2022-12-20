@@ -3,7 +3,7 @@ import axios from 'axios'
 import { onBeforeMount, reactive } from 'vue';
 
 let items = reactive({});
-const testArray =reactive({  });
+const testArray =reactive([]);
 let testObject =reactive({});
 
 
@@ -36,12 +36,13 @@ onBeforeMount (() => {
   <div>
     <li v-for="item in testObject" :key="item.id">
       {{ item }}
-      
+      <!-- //reactiveを使う時は、valuesで中身を出せる -->
     </li>
     <li v-for="item in testArray.values" :key="item.id">
       {{ item }}
       
     </li>
+    {{ items.values }}
     <li v-for="item in items.values" :key="item.id">
       {{ item.itemName }}
       
